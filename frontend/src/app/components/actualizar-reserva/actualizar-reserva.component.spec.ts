@@ -60,7 +60,7 @@ describe('ActualizarReservaComponent', () => {
   });
 
   it('deberia retornar null si se ingreso con el formato incorrecto', function (done) {
-    var res = component.validarFormatoFecha("12/122020")
+    var res = component.validarFormatoFecha("12/1222020")
     expect(res).toBeNull()
     done()
   });
