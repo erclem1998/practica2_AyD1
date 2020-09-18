@@ -47,4 +47,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
+  it('deberia retornar false para un limite no entero', function (done) {
+    var res = component.validarEnteroPositivoMayorA(2, 1.5)
+    expect(res).toEqual(false)
+    done()
+  });
+
 });
