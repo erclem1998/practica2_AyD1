@@ -71,4 +71,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
+  it('deberia retornar undefined si se una fecha contiene algo distinto a numeros y /', function (done) {
+    var res = component.validarFormatoFecha("1s/s2/s0s0")
+    expect(res).not.toBeDefined()
+    done()
+  });
+
 });
