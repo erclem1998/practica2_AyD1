@@ -8,9 +8,9 @@ describe('ActualizarReservaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActualizarReservaComponent ]
+      declarations: [ActualizarReservaComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -24,9 +24,9 @@ describe('ActualizarReservaComponent', () => {
   });
 
   it('deberia retornar true para un numero de habitacion entero mayor que cero', function (done) {
-    var res = component.validarEnteroPositivoMayorA(2)
+    var res = component.validarEnteroPositivoMayorA(2, 1)
     expect(res).toBeTruthy()
     done()
-});
+  });
 
 });

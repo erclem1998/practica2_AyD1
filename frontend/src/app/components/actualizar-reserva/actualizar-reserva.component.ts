@@ -12,4 +12,10 @@ export class ActualizarReservaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validarEnteroPositivoMayorA(valor: any, limite: any){
+    if(valor >= limite) {
+      return true
+    }
+}
+
 }
