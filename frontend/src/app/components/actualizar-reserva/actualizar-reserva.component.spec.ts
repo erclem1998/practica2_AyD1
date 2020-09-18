@@ -53,4 +53,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
+  it('deberia retornar la fecha si se ingreso con el formato correcto', function (done) {
+    var res = component.validarFormatoFecha("12/12/2020")
+    expect(res).toBeDefined()
+    done()
+  });
+
 });
