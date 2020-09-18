@@ -29,4 +29,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
+  it('deberia retornar false para un numero de habitacion entero menor que cero y limite mayor que cero', function (done) {
+    var res = component.validarEnteroPositivoMayorA(-1, 1)
+    expect(res).toBeFalse()
+    done()
+  });
+
 });
