@@ -65,4 +65,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
+  it('deberia retornar undefined si se una fecha con logitud diferente de 10', function (done) {
+    var res = component.validarFormatoFecha("12/12/202")
+    expect(res).toBeUndefined()
+    done()
+  });
+
 });
