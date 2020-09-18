@@ -32,10 +32,17 @@ export class ActualizarReservaComponent implements OnInit {
 
   validarFormatoFecha(fecha: string) {
     var af = fecha.split("/")
-    if(fecha.length != 10){
+    if (fecha.length != 10) {
       return undefined
     }
-    if(af.length == 3){
+    if (af.length == 3) {
+      if (
+        fecha.includes(".") ||
+        isNaN(Number(af[0])) ||
+        isNaN(Number(af[1])) ||
+        isNaN(Number(af[2]))) {
+        return undefined
+      }
       return fecha
     }
     return null
