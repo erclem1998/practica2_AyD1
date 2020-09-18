@@ -17,6 +17,10 @@ export class ActualizarReservaComponent implements OnInit {
       return false 
     }
 
+    if(limite % 1 != 0){
+      return false 
+    }
+
     if(limite < 0) {
       return false
     }
