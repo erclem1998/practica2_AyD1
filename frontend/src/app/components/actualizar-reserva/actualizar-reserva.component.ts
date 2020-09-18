@@ -35,6 +35,7 @@ export class ActualizarReservaComponent implements OnInit {
     if(af.length == 3){
       return fecha
     }
+    return null
   }
 
 }
