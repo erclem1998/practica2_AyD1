@@ -13,6 +13,9 @@ export class ActualizarReservaComponent implements OnInit {
   }
 
   validarEnteroPositivoMayorA(valor: any, limite: any){
+    if(limite < 0) {
+      return false
+    }
     if(valor >= limite) {
       return true
     }
