@@ -12,22 +12,29 @@ export class ActualizarReservaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  validarEnteroPositivoMayorA(valor: any, limite: any){
-    if(valor % 1 != 0){
-      return false 
-    }
-
-    if(limite % 1 != 0){
-      return false 
-    }
-
-    if(limite < 0) {
+  validarEnteroPositivoMayorA(valor: any, limite: any) {
+    if (valor % 1 != 0) {
       return false
     }
-    if(valor >= limite) {
+
+    if (limite % 1 != 0) {
+      return false
+    }
+
+    if (limite < 0) {
+      return false
+    }
+    if (valor >= limite) {
       return true
     }
     return false
-}
+  }
+
+  validarFormatoFecha(fecha: string) {
+    var af = fecha.split("/")
+    if(af.length == 3){
+      return fecha
+    }
+  }
 
 }
