@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ActualizarReservaComponent } from './components/actualizar-reserva/actualizar-reserva.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ActualizarReservaComponent
   ],
   imports: [
     BrowserModule,
