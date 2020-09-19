@@ -6,12 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EliminarUsuarioService {
 
-  readonly API_URL = 'http://localhost:3000/eliminar-usuario'
+  readonly API_URL = 'http://localhost:3000/eliminar_usuario'
 
   constructor(private http: HttpClient) { }
 
+  eliminar(dpi: number) {
+    return this.http.post(this.API_URL,{dpi: dpi})
+  }
   
   deleteFakeUserDB(dpi: number) {
-    return this.http.get<any[]>('assets/fakedb/fakeusertable.json');
+    return this.http.get('assets/fakedb/fakeusertable.json');
   }
 }
