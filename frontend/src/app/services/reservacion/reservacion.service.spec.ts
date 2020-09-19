@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Reservacion } from "../../models/reservacion";
 
 
-fdescribe('ReservacionService', () => {
+describe('ReservacionService', () => {
   let service: ReservacionService;
 
   beforeEach(() => {
@@ -16,7 +16,7 @@ fdescribe('ReservacionService', () => {
     service = TestBed.inject(ReservacionService);
   });
 
-  it('Test funcionamiento correcto del service', (done) => {
+  it('Deberia devolver una lista de tamaño >= 0', (done) => {
     service.getReservaciones().subscribe((res: Reservacion[]) => {
       expect(res.length).toBeGreaterThanOrEqual(0);
       done();

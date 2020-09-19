@@ -19,7 +19,7 @@ describe('VerReservacionesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deberia crear una nueva instancia', () => {
     expect(component).toBeTruthy();
   });
 });
