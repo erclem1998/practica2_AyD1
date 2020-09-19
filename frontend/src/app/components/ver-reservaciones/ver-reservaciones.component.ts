@@ -12,4 +12,8 @@ export class VerReservacionesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ObtenerReservacionesUsuario(dpi:number){
+
+  }
+
 }

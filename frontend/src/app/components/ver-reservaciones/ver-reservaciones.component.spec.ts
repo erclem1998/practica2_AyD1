@@ -25,8 +25,8 @@ fdescribe('VerReservacionesComponent', () => {
   
   it('Deberia devolver la lista de reservaciones de un usuario en especifico', () => {
     var dpi=3186715;
-    var resultado = VerReservacionesComponent.ObtenerReservacionesUsuario(dpi);
-    expect(component).toBeTruthy();
+    var resultado = component.ObtenerReservacionesUsuario(dpi);
+    expect(resultado.newlength).toBeLessThanOrEqual(resultado.oldlength);
   });
   
 
