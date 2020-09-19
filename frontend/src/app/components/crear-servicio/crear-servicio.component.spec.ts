@@ -38,7 +38,7 @@ describe('CrearServicioComponent', () => {
 
   it('Verficar que exista inicial mayúscula en la descripcion y sea verdadero', function (done) {
     var res = component.VerificarInicialMay("Un especialista se dirigirá a su habitación a una hora solicitada para realizarle masaje en las áreas solicitadas");
-    expect(res).toEqual(true);
+    expect(res).toBe(true);
     done();
   });
 
@@ -47,6 +47,16 @@ describe('CrearServicioComponent', () => {
     expect(res).toBeFalsy();
     done();
   });
+
+  it('Verficar la aproximación aumente el segundo decimal por ser el tercero mayor igual a 5', function (done) {
+    var res = component.AproximarDosDecimales(112.356);
+    expect(res).toBeGreaterThan(112.35);
+    done();
+  });
+
+  
+
+  
 
 
 });
