@@ -95,7 +95,7 @@ export class ActualizarReservaComponent implements OnInit {
       this.validarFormatoFecha(reservacion.fecha_salida) == undefined||
       !this.validarEnteroPositivoMayorA(reservacion.num_adultos,1)||
       !this.validarEnteroPositivoMayorA(reservacion.num_ninios,0)||
-      !this.validarEnteroPositivoMayorA(reservacion.total,0)||
+      !this.validarNumeroPositivo(reservacion.total)||
       !this.validarEnteroPositivoMayorA(reservacion.dpi,1)
       ){
       alert("Se encontraron errores en el formato de los parametros")
