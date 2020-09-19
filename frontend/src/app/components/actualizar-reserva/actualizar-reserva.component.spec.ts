@@ -106,4 +106,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   })
 
+  it('deberia de retornar el numero si es positivo la funcion validarNumeroPositivo', async function(done){
+    var s = component.validarNumeroPositivo(4.3)
+    expect(s).toBeGreaterThanOrEqual(0)
+    done()
+  })
+
 });
