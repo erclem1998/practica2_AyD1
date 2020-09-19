@@ -34,4 +34,8 @@ describe('LoginComponent', () => {
   it('verificar username sea vacio', () => {
     expect(component.UsernameVacio(MockDB[2].username)).toBeTrue();
   });
+
+  it('verificar password no sea vacio', () => {
+    expect(component.PasswdVacio(MockDB[1].passwd)).toBeFalse();
+  });
 });
