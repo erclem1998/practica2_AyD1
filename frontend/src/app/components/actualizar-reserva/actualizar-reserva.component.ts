@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Reservacion } from '../../models/reservacion'
+import { ActualizarReservacionService } from '../../services/actualizar-reservacion/actualizar-reservacion.service'
 
 @Component({
   selector: 'app-actualizar-reserva',
@@ -36,7 +37,7 @@ export class ActualizarReservaComponent implements OnInit {
     ]),
   });
 
-  constructor() { }
+  constructor(private reservService: ActualizarReservacionService) { }
 
   ngOnInit(): void {
   }
@@ -77,7 +78,7 @@ export class ActualizarReservaComponent implements OnInit {
     return null
   }
 
-  actualizar(reservacion: Reservacion): any {
+  async actualizar(reservacion: Reservacion): Promise<any> {
     if(
       !this.validarEnteroPositivoMayorA(reservacion.id_reservacion,1)||
       !this.validarEnteroPositivoMayorA(reservacion.num_habitaciones,1)||
@@ -94,8 +95,10 @@ export class ActualizarReservaComponent implements OnInit {
       return false
     }
 
-    alert("Se Actualizo correctamente la reservacion")
-    return true
+    await this.reservService.actualizar(reservacion).subscribe((res: any) => {
+      alert(res.message)
+      return true
+    })
   }
 
   get idFC() {

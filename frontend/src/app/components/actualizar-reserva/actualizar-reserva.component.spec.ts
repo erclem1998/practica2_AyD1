@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Reservacion } from 'src/app/models/reservacion';
+import { HttpClientModule } from '@angular/common/http'
 
 
 describe('ActualizarReservaComponent', () => {
@@ -22,6 +23,7 @@ describe('ActualizarReservaComponent', () => {
         MatButtonModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
+        HttpClientModule
       ]
     })
       .compileComponents();
@@ -91,14 +93,15 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
-  it('deberia de retornar true la funcion actualizar', function(done){
-    var s = component.actualizar(new Reservacion(1,1,"12/12/2020","13/12/2020",2,1,650,12345678))
+  it('deberia de retornar true la funcion actualizar', async function(done){
+    var s = component.actualizar(new Reservacion(1,1,"09/12/2020","13/12/2020",2,1,650,3186715))
     expect(s).not.toBeFalsy()
     done()
   })
 
-  it('deberia de retornar false la funcion actualizar', function(done){
-    var s = component.actualizar(new Reservacion(1,1,"1s/12/2020","13/12/2020",2,1,650,12345678))
+  it('deberia de retornar false la funcion actualizar', async function(done){
+    var s = await component.actualizar(new Reservacion(1,1,"1s/12/2020","13/12/2020",2,1,650,12345678))
+    console.log(s)
     expect(s).not.toBeTruthy()
     done()
   })
