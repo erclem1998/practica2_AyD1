@@ -60,7 +60,11 @@ describe('CrearServicioComponent', () => {
     done();
   });
 
-  
+  it('Verficar la aproximación no se realice teniendo null sabiendo que no era decimal', function (done) {
+    var res = component.AproximarDosDecimales(121);
+    expect(res).toBeNull();
+    done();
+  });
 
 
 });
