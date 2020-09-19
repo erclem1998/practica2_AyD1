@@ -78,6 +78,22 @@ export class ActualizarReservaComponent implements OnInit {
   }
 
   actualizar(reservacion: Reservacion): any {
+    if(
+      !this.validarEnteroPositivoMayorA(reservacion.id_reservacion,1)||
+      !this.validarEnteroPositivoMayorA(reservacion.num_habitaciones,1)||
+      this.validarFormatoFecha(reservacion.fecha_entrada) == null||
+      this.validarFormatoFecha(reservacion.fecha_entrada) == undefined||
+      this.validarFormatoFecha(reservacion.fecha_salida) == null||
+      this.validarFormatoFecha(reservacion.fecha_salida) == undefined||
+      !this.validarEnteroPositivoMayorA(reservacion.num_adultos,1)||
+      !this.validarEnteroPositivoMayorA(reservacion.num_ninios,0)||
+      !this.validarEnteroPositivoMayorA(reservacion.total,0)||
+      !this.validarEnteroPositivoMayorA(reservacion.dpi,1)
+      ){
+      alert("Se encontraron errores en el formato de los parametros")
+      return false
+    }
+
     alert("Se Actualizo correctamente la reservacion")
     return true
   }

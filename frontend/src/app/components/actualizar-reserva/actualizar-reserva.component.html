@@ -26,7 +26,7 @@
             <div class="form-row">
                 <mat-form-field>
                     <mat-label>Fecha entrada</mat-label>
-                    <input matInput formControlName="fecha_entrada" type="text" placeholder="Fecha entrada...">
+                    <input matInput formControlName="fecha_entrada" type="text" placeholder="Ej 14/12/2020">
                     <mat-error *ngIf="feFC.hasError('required')">
                         Fecha entrada es <strong>Obligatorio</strong>
                     </mat-error>
@@ -34,7 +34,7 @@
 
                 <mat-form-field class="mar-l">
                     <mat-label>Fecha salida</mat-label>
-                    <input matInput formControlName="fecha_salida" type="text" placeholder="Fecha salida...">
+                    <input matInput formControlName="fecha_salida" type="text" placeholder="Ej 15/12/2020">
                     <mat-error *ngIf="fsFC.hasError('required')">
                         Fecha salida es <strong>Obligatorio</strong>
                     </mat-error>
