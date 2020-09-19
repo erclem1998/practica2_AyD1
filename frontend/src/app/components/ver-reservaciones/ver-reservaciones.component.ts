@@ -20,10 +20,13 @@ export class VerReservacionesComponent implements OnInit {
   }
 
   obtenerR(){
-    this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[])=>{
+    console.log(this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[])=>{
       this.lista_reservaciones=res;
       this.lista_reservacionesTabla=res;
-    });
+      console.log(res);
+    },(err)=>{
+      console.log(err);
+    }));
   }
 
   ObtenerReservacionesUsuario(dpi:number){
