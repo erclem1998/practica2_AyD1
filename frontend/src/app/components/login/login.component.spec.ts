@@ -28,14 +28,18 @@ describe('LoginComponent', () => {
   });
 
   it('verificar username no sea vacio', () => {
-    expect(component.UsernameVacio(MockDB[0].username)).toBeFalse();
+    expect(component.AtributoVacio(MockDB[0].username)).toBeFalse();
   });
 
   it('verificar username sea vacio', () => {
-    expect(component.UsernameVacio(MockDB[2].username)).toBeTrue();
+    expect(component.AtributoVacio(MockDB[2].username)).toBeTrue();
   });
 
   it('verificar password no sea vacio', () => {
-    expect(component.PasswdVacio(MockDB[1].passwd)).toBeFalse();
+    expect(component.AtributoVacio(MockDB[1].passwd)).toBeFalse();
+  });
+
+  it('verificar password sea vacio', () => {
+    expect(component.AtributoVacio(MockDB[3].passwd)).toBeTrue();
   });
 });
