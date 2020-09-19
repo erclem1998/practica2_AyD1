@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Reservacion } from "../../models/reservacion";
 
 
-describe('ReservacionService', () => {
+fdescribe('ReservacionService', () => {
   let service: ReservacionService;
 
   beforeEach(() => {
@@ -22,4 +22,5 @@ describe('ReservacionService', () => {
       done();
     });
   });
+
 });
