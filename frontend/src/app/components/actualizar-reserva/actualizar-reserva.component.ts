@@ -78,6 +78,12 @@ export class ActualizarReservaComponent implements OnInit {
     return null
   }
 
+  validarNumeroPositivo(numero: number){
+    if(numero > 0){
+      return numero
+    }
+  }
+
   async actualizar(reservacion: Reservacion): Promise<any> {
     if(
       !this.validarEnteroPositivoMayorA(reservacion.id_reservacion,1)||
