@@ -28,7 +28,7 @@ export class ReservacionService {
   }
 
   getFakeReservationDB():Observable<any[]>{
-    return this.http.get<any[]>('assets/fakereservationtable.json');
+    return this.http.get<any[]>('assets/fakedb/fakereservationtable.json');
   }
   
 }

@@ -32,7 +32,11 @@ fdescribe('ReservacionService', () => {
 
   it('Deberia devolver true', (done) => {
     service.getFakeReservationDB().subscribe((res: any[]) => {
-      expect(res.length).toBeGreaterThanOrEqual(0);
+      var mockdb=res;
+      var mockDelete= jasmine.createSpy().and.callFake(function(){
+        return true;
+      });
+      expect(mockDelete).toBeTruthy();
       done();
     });
   });
