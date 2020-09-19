@@ -23,4 +23,11 @@ fdescribe('ReservacionService', () => {
     });
   });
 
+  it('Deberia devolver affectedRows = 0', (done) => {
+    service.Eliminar(12).subscribe((res: any) => {
+      console.log(res);
+      expect(res).toEqual(!null);
+      done();
+    });
+  });
 });
