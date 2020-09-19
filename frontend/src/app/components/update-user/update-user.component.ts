@@ -25,11 +25,23 @@ export class UpdateUserComponent implements OnInit {
   }
 
   test1 = (username): boolean => {
-    return false;
+    return username.length >= 5;
   }
 
   test2 = (username): boolean => {
-    return false;
+    var number = 0;
+    for (var i = 0; i < username.length; i++) {
+      if (username.charCodeAt(i) >= 48 && username.charCodeAt(i) <= 57) {
+        number++;
+      }
+      else if (username.charCodeAt(i) >= 65 && username.charCodeAt(i) <= 90) {
+        number++;
+      }
+      else if (username.charCodeAt(i) >= 97 && username.charCodeAt(i) <= 122) {
+        number++;
+      }
+    }
+    return number == username.length;
   }
 
   test3 = (password): number => {
