@@ -42,6 +42,11 @@ describe('CrearServicioComponent', () => {
     done();
   });
 
-  
+  it('Verficar inicial mayúscula en el nombre del servicio y sea falso', function (done) {
+    var res = component.VerificarInicialMay("masajes en la habitación");
+    expect(res).toBeFalsy();
+    done();
+  });
+
 
 });
