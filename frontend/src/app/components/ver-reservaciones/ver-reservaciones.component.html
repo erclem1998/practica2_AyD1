@@ -19,9 +19,16 @@
                         <th>Total (Q)</th>
                     </tr>
                 </thead>
-                <!--<tr *ngFor="let lista of alguito;">
-                    <td *ngFor="let lista2 of lista.lista;">{{lista2}}</td>
-                </tr>-->
+                <tr *ngFor="let lista of lista_reservacionesTabla;">
+                    <td>{{lista.id_reservacion}}</td>
+                    <td>{{lista.dpi}}</td>
+                    <td>{{lista.fecha_entrada}}</td>
+                    <td>{{lista.fecha_salida}}</td>
+                    <td>{{lista.num_habitaciones}}</td>
+                    <td>{{lista.num_adultos}}</td>
+                    <td>{{lista.num_ninios}}</td>
+                    <td>{{lista.total}}</td>
+                </tr>
             </table>
         </div>
     </mat-card-content>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Reservacion } from "../../models/reservacion";
+import { ReservacionService } from "../../services/reservacion/reservacion.service";
 
 @Component({
   selector: 'app-ver-reservaciones',
@@ -7,15 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerReservacionesComponent implements OnInit {
 
-  constructor() { }
+  lista_reservaciones:Reservacion[]=[];
+  lista_reservacionesTabla:Reservacion[]=[];
+  private ServicioReservacion:ReservacionService;
+
+  constructor() { 
+    this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[])=>{
+      this.lista_reservaciones=res;
+      this.lista_reservacionesTabla=res;
+    });
+  }
 
   ngOnInit(): void {
   }
 
   ObtenerReservacionesUsuario(dpi:number){
+    this.lista_reservacionesTabla=[];
+    for(let i=0;i<this.lista_reservaciones.length;i++){
+      if(this.lista_reservaciones[i].dpi==dpi){
+        this.lista_reservacionesTabla.push(this.lista_reservaciones[i]);
+      }
+    }
     return {
-      newlength:3,
-      oldlength:5
+      newlength:this.lista_reservacionesTabla.length,
+      oldlength:this.lista_reservaciones.length
     }
   }
 
