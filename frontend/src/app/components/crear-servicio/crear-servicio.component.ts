@@ -19,6 +19,13 @@ export class CrearServicioComponent implements OnInit {
     return false;
   }
 
-  
+  AproximarDosDecimales(numero){
+    var numeroRegexp = new RegExp('\\d\\.(\\d){' + 2 + ',}');   
+    if (numeroRegexp.test(numero)) {        
+        return Number(numero.toFixed(2));
+    } else {
+      return null;
+    }
+  }
 
 }
