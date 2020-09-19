@@ -28,6 +28,13 @@ export class CrearServicioComponent implements OnInit {
     }
   }
 
-  
+  VerificarNumeroPalabras(Descripcion:string){
+    var TextoDividido = Descripcion.split(" ");
+    var numeroPalabras = TextoDividido.length;
+    if(numeroPalabras<=20 && numeroPalabras>=5){
+      return true;
+    }
+    return false;
+  }
 
 }
