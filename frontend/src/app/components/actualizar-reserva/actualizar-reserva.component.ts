@@ -77,7 +77,9 @@ export class ActualizarReservaComponent implements OnInit {
     return null
   }
 
-  actualizar(reservacion: Reservacion) {
+  actualizar(reservacion: Reservacion): any {
+    alert("Se Actualizo correctamente la reservacion")
+    return true
   }
 
   get idFC() {

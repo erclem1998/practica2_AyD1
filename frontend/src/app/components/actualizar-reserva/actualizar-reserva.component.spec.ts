@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Reservacion } from 'src/app/models/reservacion';
 
 
 describe('ActualizarReservaComponent', () => {
@@ -90,9 +91,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
-  it('deberia de ejecutarse la funcion', function(done){
-    spyOn(component, 'actualizar');
-    expect(component.actualizar).toHaveBeenCalled()
+  it('deberia de retorntar true la funcion actualizar', function(done){
+    var s = component.actualizar(new Reservacion(1,1,"12/12/2020","13/12/2020",2,1,650,12345678))
+    expect(s).not.toBeFalsy()
+    done()
   })
 
 });
