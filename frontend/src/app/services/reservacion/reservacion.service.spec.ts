@@ -7,7 +7,7 @@ import { Reservacion } from "../../models/reservacion";
 
 fdescribe('ReservacionService', () => {
   let service: ReservacionService;
-
+  var http: HttpClient;
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
@@ -25,9 +25,18 @@ fdescribe('ReservacionService', () => {
 
   it('Deberia devolver affectedRows = 0', (done) => {
     service.Eliminar(12).subscribe((res: any) => {
-      console.log(res);
-      expect(res).toEqual(!null);
+      expect(res.affectedRows).toEqual(0);
       done();
     });
   });
+
+  it('Deberia devolver true', (done) => {
+    http.get('assets/fakedb/fakereservation.json')
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        console.log('Error al obtener la configuracion: ' + error);
+      });
+  });
+
 });
