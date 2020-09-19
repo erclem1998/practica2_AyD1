@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Reservacion } from "../../models/reservacion";
 
 
-fdescribe('ReservacionService', () => {
+describe('ReservacionService', () => {
   let service: ReservacionService;
   var http: HttpClient;
   var mockDelete= jasmine.createSpy().and.callFake(function(id_reservacion,dbfalsa){
