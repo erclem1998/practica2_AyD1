@@ -11,7 +11,7 @@ module.exports=(app,connection)=>{
     });
 
     app.delete('/eliminar_reservacion',(req,res)=>{
-        connection.query(`delete from RESERVACION where id_reservacion=${parseInt(req.body.id_reservacion)}`, function (err, rows, fields) {
+        connection.query(`delete from RESERVACION where id_reservacion=${parseInt(req.query.id_reservacion)}`, function (err, rows, fields) {
             if (!err) {
                 res.status(200).send(rows)
             }
