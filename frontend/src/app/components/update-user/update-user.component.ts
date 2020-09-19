@@ -54,8 +54,18 @@ export class UpdateUserComponent implements OnInit {
     return number;
   }
 
-  onSubmit() {
-    return false;
+  async onSubmit() {
+    if (this.updateForm.value.username == "") this.updateForm.value.username = undefined;
+    if (this.updateForm.value.passwd == "") this.updateForm.value.passwd = undefined;
+    if (this.updateForm.value.correo == "") this.updateForm.value.correo = undefined;
+    if (this.updateForm.value.edad == "") this.updateForm.value.edad = undefined;
+    console.log(this.updateForm.value)
+    await this.uus.updateuser(this.updateForm.value).subscribe((res: any) => {
+      if (res.affectedRows == 1) {
+        alert("El usuario se actualizo correctamente!!!");
+        return true;
+      }
+    });
   }
 
 }
