@@ -5,9 +5,20 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Reservacion } from "../../models/reservacion";
 
 
-describe('ReservacionService', () => {
+fdescribe('ReservacionService', () => {
   let service: ReservacionService;
   var http: HttpClient;
+  var mockDelete= jasmine.createSpy().and.callFake(function(id_reservacion,dbfalsa){
+    var flag=false;
+    for(let i=0;i<dbfalsa.length;i++){
+      if(dbfalsa[i].id_reservacion==id_reservacion){
+        dbfalsa.splice(i,1);
+        return 200;
+      }
+    }
+    return 404;
+  });
+  
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
@@ -30,13 +41,18 @@ describe('ReservacionService', () => {
     });
   });
 
-  it('Deberia devolver true', (done) => {
+  it('Deberia devolver un 200 de que si lo elimino', (done) => {
     service.getFakeReservationDB().subscribe((res: any[]) => {
       var mockdb=res;
-      var mockDelete= jasmine.createSpy().and.callFake(function(){
-        return true;
-      });
-      expect(mockDelete()).toBeTruthy();
+      expect(mockDelete(8,mockdb)).toBe(200);
+      done();
+    });
+  });
+
+  it('Deberia devolver un estado 404', (done) => {
+    service.getFakeReservationDB().subscribe((res: any[]) => {
+      var mockdb=res;
+      expect(mockDelete(15,mockdb)).not.toBe(200);
       done();
     });
   });
