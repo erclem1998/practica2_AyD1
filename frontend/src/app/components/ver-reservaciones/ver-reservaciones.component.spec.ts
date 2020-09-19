@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VerReservacionesComponent } from './ver-reservaciones.component';
 
-describe('VerReservacionesComponent', () => {
+fdescribe('VerReservacionesComponent', () => {
   let component: VerReservacionesComponent;
   let fixture: ComponentFixture<VerReservacionesComponent>;
 
@@ -22,4 +22,12 @@ describe('VerReservacionesComponent', () => {
   it('Deberia crear una nueva instancia', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('Deberia devolver la lista de reservaciones de un usuario en especifico', () => {
+    var dpi=3186715;
+    var resultado = VerReservacionesComponent.ObtenerReservacionesUsuario(dpi);
+    expect(component).toBeTruthy();
+  });
+  
+
 });
