@@ -11,16 +11,19 @@ export class VerReservacionesComponent implements OnInit {
 
   lista_reservaciones:Reservacion[]=[];
   lista_reservacionesTabla:Reservacion[]=[];
-  private ServicioReservacion:ReservacionService;
 
-  constructor() { 
+  constructor(private ServicioReservacion:ReservacionService) { 
+    this.obtenerR();
+  }
+
+  ngOnInit(): void {
+  }
+
+  obtenerR(){
     this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[])=>{
       this.lista_reservaciones=res;
       this.lista_reservacionesTabla=res;
     });
-  }
-
-  ngOnInit(): void {
   }
 
   ObtenerReservacionesUsuario(dpi:number){
