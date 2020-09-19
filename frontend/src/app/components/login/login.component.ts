@@ -16,6 +16,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  UsernameVacio(us: string){
+    if(us == ''){
+      return true;
+    }
+    return false;
+  }
+
   Login(){
   }
 }
