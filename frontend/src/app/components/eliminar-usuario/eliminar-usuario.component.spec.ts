@@ -22,4 +22,10 @@ describe('EliminarUsuarioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('deberia de retornar true la funcion eliminar para Usuario', async function(done){
+    var s = component.eliminar(4016724)
+    expect(s).not.toBeFalsy()
+    done()
+  })
 });
