@@ -54,7 +54,11 @@ describe('CrearServicioComponent', () => {
     done();
   });
 
-  
+  it('Verficar la aproximación que no aumente el segundo decimal por ser el tercero menor a 5', function (done) {
+    var res = component.AproximarDosDecimales(112.354);
+    expect(res).toBeLessThan(112.36);
+    done();
+  });
 
   
 
