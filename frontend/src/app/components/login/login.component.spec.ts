@@ -30,4 +30,8 @@ describe('LoginComponent', () => {
   it('verificar username no sea vacio', () => {
     expect(component.UsernameVacio(MockDB[0].username)).toBeFalse();
   });
+
+  it('verificar username sea vacio', () => {
+    expect(component.UsernameVacio(MockDB[2].username)).toBeTrue();
+  });
 });
