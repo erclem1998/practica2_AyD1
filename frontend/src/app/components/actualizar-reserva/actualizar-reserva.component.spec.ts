@@ -91,9 +91,15 @@ describe('ActualizarReservaComponent', () => {
     done()
   });
 
-  it('deberia de retorntar true la funcion actualizar', function(done){
+  it('deberia de retornar true la funcion actualizar', function(done){
     var s = component.actualizar(new Reservacion(1,1,"12/12/2020","13/12/2020",2,1,650,12345678))
     expect(s).not.toBeFalsy()
+    done()
+  })
+
+  it('deberia de retornar false la funcion actualizar', function(done){
+    var s = component.actualizar(new Reservacion(1,1,"1s/12/2020","13/12/2020",2,1,650,12345678))
+    expect(s).not.toBeTruthy()
     done()
   })
 
