@@ -51,7 +51,7 @@ export class ActualizarReservaComponent implements OnInit {
       return false
     }
 
-    if (limite < 0) {
+    if (this.validarNumeroPositivo(limite) == -1) {
       return false
     }
     if (valor >= limite) {
@@ -79,7 +79,7 @@ export class ActualizarReservaComponent implements OnInit {
   }
 
   validarNumeroPositivo(numero: number){
-    if(numero > 0){
+    if(!(numero < 0)){
       return numero
     }
     return -1
