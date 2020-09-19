@@ -36,4 +36,14 @@ describe('EliminarUsuarioService', () => {
       done()
     })
   })
+
+  it("deberia retornar mensaje de error al consumir api real", function(done) {
+    service.eliminar(1).subscribe((res:any)=>{
+      expect(res.message).toEqual("No se pudo eliminar")
+      done()
+    })
+  })
 });
+eliminar(dpi: number) {
+  return this.http.post(this.API_URL,{dpi: dpi})
+}
