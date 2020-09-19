@@ -82,6 +82,7 @@ export class ActualizarReservaComponent implements OnInit {
     if(numero > 0){
       return numero
     }
+    return -1
   }
 
   async actualizar(reservacion: Reservacion): Promise<any> {
