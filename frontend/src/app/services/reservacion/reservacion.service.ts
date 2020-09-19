@@ -26,5 +26,9 @@ export class ReservacionService {
     let params = new HttpParams().set("id_reservacion",id_reservacion);
     return this.http.delete(baseURL+"eliminar_reservacion",{params:params});
   }
+
+  getFakeReservationDB():Observable<any[]>{
+    return this.http.get<any[]>('assets/fakereservationtable.json');
+  }
   
 }

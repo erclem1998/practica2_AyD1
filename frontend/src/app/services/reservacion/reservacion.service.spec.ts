@@ -31,12 +31,10 @@ fdescribe('ReservacionService', () => {
   });
 
   it('Deberia devolver true', (done) => {
-    http.get('assets/fakedb/fakereservation.json')
-      .subscribe(data => {
-        console.log(data);
-      }, error => {
-        console.log('Error al obtener la configuracion: ' + error);
-      });
+    service.getFakeReservationDB().subscribe((res: any[]) => {
+      expect(res.length).toBeGreaterThanOrEqual(0);
+      done();
+    });
   });
 
 });
