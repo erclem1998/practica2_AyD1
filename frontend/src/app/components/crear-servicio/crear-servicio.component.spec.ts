@@ -66,5 +66,11 @@ describe('CrearServicioComponent', () => {
     done();
   });
 
+  it('Verficar que descripcion entre en rango de 5 y 20 palabras esperando true', function (done) {
+    var res = component.VerificarNumeroPalabras("Un especialista se dirigirá a su habitación a una hora solicitada para realizarle masaje en las áreas solicitadas");
+    expect(res).toBe(true);
+    done();
+  });
+
 
 });
