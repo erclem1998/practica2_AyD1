@@ -12,4 +12,11 @@ export class CrearServicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  VerificarInicialMay(Nombre:string):boolean{
+      if(Nombre.charCodeAt(0) >=65 && Nombre.charCodeAt(0) <=90){
+        return true;
+      }
+    return false;
+  }
+
 }

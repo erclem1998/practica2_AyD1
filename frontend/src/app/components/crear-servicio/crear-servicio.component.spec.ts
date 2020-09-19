@@ -14,9 +14,7 @@ describe('CrearServicioComponent', () => {
         MatDialogModule,
         MatCardModule
       ],
-      providers: [
-        {}
-      ],
+      
       declarations: [ CrearServicioComponent ]
     })
     .compileComponents();
@@ -32,10 +30,12 @@ describe('CrearServicioComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Verficar que exista inicial mayúscula y sea verdadero', function (done) {
-    var res = component.VerificarInicialNombreServicio("Masajes en la habitación");
+  it('Verficar que exista inicial mayúscula en el nombre del servicio y sea verdadero', function (done) {
+    var res = component.VerificarInicialMay("Masajes en la habitación");
     expect(res).toBeTruthy();
     done();
   });
+
+  
 
 });
