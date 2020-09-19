@@ -45,7 +45,13 @@ export class UpdateUserComponent implements OnInit {
   }
 
   test3 = (password): number => {
-    return 1;
+    var number = 0;
+    for (var i = 0; i < password.length; i++) {
+      if (password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90) {
+        number++;
+      }
+    }
+    return number;
   }
 
   onSubmit() {
