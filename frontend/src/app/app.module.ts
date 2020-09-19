@@ -11,13 +11,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

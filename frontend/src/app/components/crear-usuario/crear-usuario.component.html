@@ -1,0 +1,40 @@
+<div class="cardconfig">
+    <div class="center">
+        <mat-card style="width: 450px;">
+            <mat-card-header>
+              <mat-card-title>Crear Usuario</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p> 
+                    <mat-label class="titles" style="margin-left: 20px;">DPI: </mat-label>
+                    <input type="text" style="margin-left: 55px; width: 200px;" [(ngModel)]="usuario.dpi">
+                    <br>
+                </p>
+                <p>
+                    <mat-label class="titles" style="margin-left: 20px;">Username: </mat-label>
+                    <input type="text" style="width: 200px;" [(ngModel)]="usuario.username">
+                    <br>
+                </p>
+                <p>
+                    <mat-label class="titles" style="margin-left: 20px;">Password: </mat-label>
+                    <input type="password" style="width: 200px;" [(ngModel)]="usuario.passwd">
+                    <br>
+                </p>
+                <p>
+                    <mat-label class="titles" style="margin-left: 20px;">Correo: </mat-label>
+                    <input type="email" style="margin-left: 23px; width: 200px;" [(ngModel)]="usuario.correo">
+                    <br>
+                </p>
+                <p>
+                    <mat-label class="titles" style="margin-left: 20px;">Edad: </mat-label>
+                    <input type="text" style="margin-left: 45px; width: 200px;" [(ngModel)]="usuario.edad">
+                    <br>
+                </p>
+            </mat-card-content>
+            <mat-card-actions style="margin-left: 20px;">
+              <button mat-raised-button color="primary" (click)="Registrar()">Registrar</button>
+              <br>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>
