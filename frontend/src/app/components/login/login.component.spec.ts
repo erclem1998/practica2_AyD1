@@ -1,16 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { LoginService } from '../../services/login/login.service';
+
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
+  let service: LoginService;
   let MockDB;
   
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      imports: [HttpClientModule],
+      providers: [LoginService, HttpClient]
     })
     .compileComponents();
+    service = TestBed.inject(LoginService);
   }));
 
   beforeEach(() => {
@@ -19,27 +26,55 @@ describe('LoginComponent', () => {
     fixture.detectChanges();
   });
 
-  beforeEach(() => {
-    MockDB = [{username: 'uhcorona',passwd: 'uhcorona'},{username: 'erick1234',passwd: 'erick123'},{username: '',passwd: 'carlos456'},{username: 'henryg123',passwd: ''}];
-  });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('verificar username no sea vacio', () => {
-    expect(component.AtributoVacio(MockDB[0].username)).toBeFalse();
+  it('verificar username no sea vacio', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        username: MockDB[0].username,
+        passwd: MockDB[0].passwd
+      }
+      expect(component.AtributoVacio(user.username)).toBeFalse();
+      done();
+    });
   });
 
-  it('verificar username sea vacio', () => {
-    expect(component.AtributoVacio(MockDB[2].username)).toBeTrue();
+  it('verificar username sea vacio', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        username: '',
+        passwd: MockDB[1].passwd
+      }
+      expect(component.AtributoVacio(user.username)).toBeTrue();
+      done();
+    });
   });
 
-  it('verificar password no sea vacio', () => {
-    expect(component.AtributoVacio(MockDB[1].passwd)).toBeFalse();
+  it('verificar password no sea vacio', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        username: MockDB[1].username,
+        passwd: MockDB[1].passwd
+      }
+      expect(component.AtributoVacio(user.passwd)).toBeFalse();
+      done();
+    }); 
   });
 
-  it('verificar password sea vacio', () => {
-    expect(component.AtributoVacio(MockDB[3].passwd)).toBeTrue();
+  it('verificar password sea vacio', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        username: MockDB[3].username,
+        passwd: ''
+      }
+      expect(component.AtributoVacio(user.passwd)).toBeTrue();
+      done();
+    }); 
   });
 });
