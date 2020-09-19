@@ -1,1 +1,41 @@
-<p>update-user works!</p>
+<div class="card-container">
+  <mat-card>
+    <br>
+    <mat-card-title>
+      ACTUALIZAR USUARIO
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="updateForm">
+        <mat-form-field>
+          <mat-icon matSuffix>perm_identity</mat-icon>
+          <input matInput placeholder="DPI" type="number" formControlName="dpi">
+        </mat-form-field>
+        <br><br>
+        <mat-form-field>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <input matInput placeholder="Username" type="text" formControlName="username">
+        </mat-form-field>
+        <br><br>
+        <mat-form-field>
+          <mat-icon matSuffix>vpn_key</mat-icon>
+          <input matInput placeholder="Password" type="password" formControlName="passwd">
+        </mat-form-field>
+        <br><br>
+        <mat-form-field>
+          <mat-icon matSuffix>email</mat-icon>
+          <input matInput placeholder="Correo" type="email" formControlName="correo">
+        </mat-form-field>
+        <br><br>
+        <mat-form-field>
+          <mat-icon matSuffix>contact_page</mat-icon>
+          <input matInput placeholder="Edad" type="number" formControlName="edad">
+        </mat-form-field>
+        <br><br>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Actualizar Usuario</button>
+    </mat-card-actions>
+    <br>
+  </mat-card>
+</div>
