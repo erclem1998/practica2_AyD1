@@ -36,6 +36,12 @@ describe('CrearServicioComponent', () => {
     done();
   });
 
+  it('Verficar que exista inicial mayúscula en la descripcion y sea verdadero', function (done) {
+    var res = component.VerificarInicialMay("Un especialista se dirigirá a su habitación a una hora solicitada para realizarle masaje en las áreas solicitadas");
+    expect(res).toEqual(true);
+    done();
+  });
+
   
 
 });
