@@ -4,7 +4,7 @@ import { ActualizarReservaComponent } from './components/actualizar-reserva/actu
 
 const routes: Routes = [
   {
-    path: '/actualizar-reserva',
+    path: 'actualizar-reservacion',
     component: ActualizarReservaComponent
   }
 ];

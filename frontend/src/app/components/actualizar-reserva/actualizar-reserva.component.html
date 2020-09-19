@@ -1,1 +1,83 @@
-<p>actualizar-reserva works!</p>
+<div class="container mar-t">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Actualizar Reservacion</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="form-user" [formGroup]="FG">
+            
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="id_reservacion" type="number" placeholder="Id Reservacion...">
+                    <mat-error *ngIf="idFC.hasError('required')">
+                        Id es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mar-l">
+                    <mat-label>Numero de habitaciones</mat-label>
+                    <input matInput formControlName="num_habitaciones" type="number" placeholder="Numero de habitaciones...">
+                    <mat-error *ngIf="numHFC.hasError('required')">
+                        Numero es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>Fecha entrada</mat-label>
+                    <input matInput formControlName="fecha_entrada" type="text" placeholder="Fecha entrada...">
+                    <mat-error *ngIf="feFC.hasError('required')">
+                        Fecha entrada es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mar-l">
+                    <mat-label>Fecha salida</mat-label>
+                    <input matInput formControlName="fecha_salida" type="text" placeholder="Fecha salida...">
+                    <mat-error *ngIf="fsFC.hasError('required')">
+                        Fecha salida es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>No adultos</mat-label>
+                    <input matInput formControlName="num_adultos" type="number" placeholder="No adultos...">
+                    <mat-error *ngIf="nAFC.hasError('required')">
+                        Adultos es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mar-l">
+                    <mat-label>No niños</mat-label>
+                    <input matInput formControlName="num_ninios" type="number" placeholder="No niños...">
+                    <mat-error *ngIf="nNFC.hasError('required')">
+                        Niños es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>Total</mat-label>
+                    <input matInput formControlName="total" type="number" placeholder="Total...">
+                    <mat-error *ngIf="totalFC.hasError('required')">
+                        Total es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="mar-l">
+                    <mat-label>DPI</mat-label>
+                    <input matInput formControlName="dpi" type="number" placeholder="DPI...">
+                    <mat-error *ngIf="dpiFC.hasError('required')">
+                        DPI es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            
+            <button (click)="actualizar(FG.value)" [disabled]="FG.invalid" class="mar-t mat-form-field text-center" mat-raised-button color="primary">Actualizar</button>
+        </mat-card-content>
+    </mat-card>
+</div>

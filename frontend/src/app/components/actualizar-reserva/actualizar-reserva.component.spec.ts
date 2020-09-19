@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActualizarReservaComponent } from './actualizar-reserva.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 describe('ActualizarReservaComponent', () => {
   let component: ActualizarReservaComponent;
@@ -8,7 +14,14 @@ describe('ActualizarReservaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ActualizarReservaComponent]
+      declarations: [ActualizarReservaComponent],
+      imports: [
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+      ]
     })
       .compileComponents();
   }));
@@ -76,5 +89,10 @@ describe('ActualizarReservaComponent', () => {
     expect(res).not.toBeDefined()
     done()
   });
+
+  it('deberia de ejecutarse la funcion', function(done){
+    spyOn(component, 'actualizar');
+    expect(component.actualizar).toHaveBeenCalled()
+  })
 
 });
