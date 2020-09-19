@@ -16,16 +16,16 @@ module.exports=(app,connection)=>{
                 }
                 if(encontrado){
                     if(log){
-                        res.status(200).send('login correcto');
+                        res.status(200).send({"msg":'login correcto'});
                     }else{
-                        res.status(404).send('passwd incorrecto');
+                        res.status(200).send({"msg":'passwd incorrecto'});
                     }
                 }else{
-                    res.status(404).send('username no registrado');    
+                    res.status(404).send({"msg":'username no registrado'});    
                 }
             }
             else {
-                res.status(404).send('usuario no registrado');
+                res.status(404).send({"msg":'usuario no registrado'});
             }
         });
     });
