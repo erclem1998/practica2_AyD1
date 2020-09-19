@@ -112,4 +112,10 @@ describe('ActualizarReservaComponent', () => {
     done()
   })
 
+  it('deberia de retornar -1 si el numeo es menor que 0 la funcion validarNumeroPositivo', async function(done){
+    var s = component.validarNumeroPositivo(-4.3)
+    expect(s).toBeLessThan(0)
+    done()
+  })
+
 });
