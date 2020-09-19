@@ -13,7 +13,10 @@ export class VerReservacionesComponent implements OnInit {
   }
 
   ObtenerReservacionesUsuario(dpi:number){
-
+    return {
+      newlength:3,
+      oldlength:5
+    }
   }
 
 }
