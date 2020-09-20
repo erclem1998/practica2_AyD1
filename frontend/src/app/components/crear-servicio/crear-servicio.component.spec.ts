@@ -103,7 +103,13 @@ describe('CrearServicioComponent', () => {
   });
 
   it('Verficar si que al crear el servicio devuelva Null', function (done) {
-    expect(service.CrearServicio('D','mmmmmm',9,9)).toEqual(null);
+    var servicio={
+      nombre_servicio: 'D',
+        descripcion:'mmmmmm',
+        precio: 9,
+        capacidad_personas: 9
+    }
+    expect(service.CrearServicio(servicio)).toEqual(null);
     done();
   });
 

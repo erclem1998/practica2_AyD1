@@ -20,11 +20,10 @@ export class CrearServicioService {
 
     
 
-    if(servicio.Nom=='D'){
+    if(servicio.nombre_servicio=='D'){
       return null;
     }
-    console.log('llega');
-    console.log(servicio);
+    
     return this.http.post('http://localhost:3000/crear_servicio',servicio,httpOptions);
   }
 
