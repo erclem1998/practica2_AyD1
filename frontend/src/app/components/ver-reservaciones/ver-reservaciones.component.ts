@@ -28,6 +28,8 @@ export class VerReservacionesComponent implements OnInit {
       this.lista_reservaciones = res;
       this.lista_reservacionesTabla = res;
       this.obtenerDpi();
+    },(error:any)=>{
+      console.log(error);
     })
   }
 
