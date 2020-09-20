@@ -22,9 +22,9 @@ export class EliminarUsuarioComponent implements OnInit {
 
   async eliminar(dpi: number): Promise<any> {
     
-    await this.userService.eliminar(dpi).subscribe((res: any) => {
-      alert(res.message)
-      return true
+    await this.userService.eliminar(dpi).subscribe(res =>{}, err => {
+      alert(err.message)
+      return false
     })
   }
 
