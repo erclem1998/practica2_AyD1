@@ -50,4 +50,15 @@ describe('CrearUsuarioComponent', () => {
       done();
     }); 
   });
+
+  it('verificar mayoria de edad de usuario', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        edad: MockDB[2].edad,
+      }
+      expect(component.Edad_Valida(user.edad)).toBeGreaterThanOrEqual(18);
+      done();
+    }); 
+  });
 });

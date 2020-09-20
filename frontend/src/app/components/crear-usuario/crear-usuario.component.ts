@@ -27,6 +27,15 @@ export class CrearUsuarioComponent implements OnInit {
     return 'dpi invalido'
   }
 
+  Edad_Valida(num:number){
+    if(num > 0){
+        if(num >= 18){
+          return num;
+        }
+    }
+    return 'edad no valida';
+  }
+
   Registrar(){
     console.log(this.usuario);
   }
