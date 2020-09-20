@@ -28,8 +28,7 @@ export class VerReservacionesComponent implements OnInit {
       this.lista_reservaciones = res;
       this.lista_reservacionesTabla = res;
       this.obtenerDpi();
-    },(error:any)=>{
-      console.log(error);
+      return res;
     })
   }
 
@@ -40,7 +39,6 @@ export class VerReservacionesComponent implements OnInit {
   ObtenerReservacionesUsuario(dpi: number) {
     this.lista_reservacionesTabla = [];
     for (let i = 0; i < this.lista_reservaciones.length; i++) {
-      console.log("si entro");
       if (this.lista_reservaciones[i].dpi == dpi) {
         this.lista_reservacionesTabla.push(this.lista_reservaciones[i]);
       }
@@ -82,6 +80,7 @@ export class VerReservacionesComponent implements OnInit {
   todos() {
     this.lista_reservacionesTabla = [];
     this.lista_reservacionesTabla = this.lista_reservaciones;
+    return true;
   }
 
   obtenerDpi() {

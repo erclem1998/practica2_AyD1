@@ -27,7 +27,7 @@ describe('ReservacionService', () => {
     service = TestBed.inject(ReservacionService);
   });
 
-  it('Deberia devolver una lista de tamaño >= 0', (done) => {
+  it('Deberia devolver una lista de tamaño >= 0', async (done) => {
     service.getReservaciones().subscribe((res: Reservacion[]) => {
       expect(res.length).toBeGreaterThanOrEqual(0);
       done();
