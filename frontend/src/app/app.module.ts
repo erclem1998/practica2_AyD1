@@ -20,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
     ActualizarReservaComponent,
     EliminarUsuarioComponent,
     LoginComponent,
+    CrearUsuarioComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { VerReservacionesComponent } from "./components/ver-reservaciones/ver-re
 import { ActualizarReservaComponent } from './components/actualizar-reserva/actualizar-reserva.component';
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'crear_user',
+    component: CrearUsuarioComponent
   },
   ]
 
