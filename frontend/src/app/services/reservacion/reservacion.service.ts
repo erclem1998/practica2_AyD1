@@ -3,10 +3,9 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { baseURL } from '../shared/baseURL';
 import { Reservacion } from '../../models/reservacion';
-
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
+    'Content-Type':  'application/json',
     'Authorization': 'my-auth-token'
   })
 };
@@ -15,15 +14,23 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ReservacionService {
-
-  constructor(private http: HttpClient) { }
-
-  getFakeReservationDB(): Observable<any[]> {
-    return this.http.get<any[]>('assets/fakedb/fakereservationtable.json');
-  }
+  constructor(private  http:HttpClient) { }
 
   postreservation(reservacion: Reservacion): Observable<any[]> {
     return this.http.post<any[]>(baseURL + 'reservacion', reservacion);
   }
 
+  getReservaciones():Observable<Reservacion[]>{
+    return this.http.get<Reservacion[]>(baseURL+'ver_reservaciones');
+  }
+
+  Eliminar(id_reservacion){
+    let params = new HttpParams().set("id_reservacion",id_reservacion);
+    return this.http.delete(baseURL+"eliminar_reservacion",{params:params});
+  }
+
+  getFakeReservationDB():Observable<any[]>{
+    return this.http.get<any[]>('assets/fakedb/fakereservationtable.json');
+  }
+  
 }
