@@ -32,7 +32,7 @@
       </mat-form-field>
         <div class="cont">
             <button mat-raised-button id="no-button" >CANCELAR</button>
-            <button mat-raised-button id="yes-button"  >CREAR</button>
+            <button mat-raised-button id="yes-button" (click)="CREAR(Nom.value,Desc.value,Cap.value,Pre.value)">CREAR</button>
         </div>
     </mat-card-content>  
   </mat-card>

@@ -22,6 +22,6 @@ connection.connect();
 const ver_tareas = require('./endpoints/suma')(app);
 const usuarios = require('./endpoints/usuarios')(app,connection);
 const reservaciones = require('./endpoints/reservaciones')(app,connection);
-
+const Crearservicio = require('./endpoints/CrearServicio')(app,connection);
 
 app.listen(3000, () => console.log('escuchando en puerto 3000'));
