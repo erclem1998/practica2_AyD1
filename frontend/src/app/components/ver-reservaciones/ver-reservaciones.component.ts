@@ -11,16 +11,16 @@ export class VerReservacionesComponent implements OnInit {
 
   lista_reservaciones: Reservacion[] = [];
   lista_reservacionesTabla: Reservacion[] = [];
-  private ServicioReservacion: ReservacionService
-  constructor() {
+  
+  constructor(private ServicioReservacion: ReservacionService) {
     this.obtenerR();
   }
 
   ngOnInit(): void {
   }
 
-  obtenerR() {
-    this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[]) => {
+  async obtenerR():Promise<any> {
+    await this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[]) => {
       for(let i=0;i<res.length;i++){
         res[i].fecha_entrada=this.obtenerFecha(res[i].fecha_entrada);
         res[i].fecha_salida=this.obtenerFecha(res[i].fecha_salida);

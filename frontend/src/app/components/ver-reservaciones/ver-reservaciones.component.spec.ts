@@ -1,16 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VerReservacionesComponent } from './ver-reservaciones.component';
+import { ReservacionService } from '../../services/reservacion/reservacion.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 describe('VerReservacionesComponent', () => {
   let component: VerReservacionesComponent;
   let fixture: ComponentFixture<VerReservacionesComponent>;
+  let service: ReservacionService;
+  var http: HttpClient;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerReservacionesComponent ]
+      declarations: [ VerReservacionesComponent ],
+      imports: [HttpClientModule],
+      providers: [ReservacionService, HttpClient]
     })
     .compileComponents();
+    service = TestBed.inject(ReservacionService);
   }));
 
   beforeEach(() => {
