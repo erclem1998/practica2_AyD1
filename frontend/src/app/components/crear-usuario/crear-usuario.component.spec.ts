@@ -61,4 +61,15 @@ describe('CrearUsuarioComponent', () => {
       done();
     }); 
   });
+
+  it('verificar que usuario es menor de edad', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        edad: MockDB[3].edad-10,
+      }
+      expect(component.Edad_Valida(user.edad)).not.toBeNaN();
+      done();
+    }); 
+  });
 });
