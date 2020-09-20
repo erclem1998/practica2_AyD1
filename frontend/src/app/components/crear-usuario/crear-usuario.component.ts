@@ -15,6 +15,10 @@ export class CrearUsuarioComponent implements OnInit {
     edad: null
   };
 
+  respuesta = {
+    msg: ''
+  };
+
   constructor(private crear:CrearUserService) { }
 
   ngOnInit(): void {
@@ -37,6 +41,11 @@ export class CrearUsuarioComponent implements OnInit {
   }
 
   Registrar(){
-    console.log(this.usuario);
+    if((this.DPI_Longitud(this.usuario.dpi)=='dpi valido') && (this.Edad_Valida(this.usuario.edad)!='edad no valida')){
+      this.crear.RegistrarUsuario(this.usuario).subscribe((res:any)=>{
+        this.respuesta = JSON.parse(JSON.stringify(res));
+        alert(this.respuesta.msg);
+      });
+    }
   }
 }
