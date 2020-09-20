@@ -11,8 +11,8 @@ export class VerReservacionesComponent implements OnInit {
 
   lista_reservaciones: Reservacion[] = [];
   lista_reservacionesTabla: Reservacion[] = [];
-
-  constructor(private ServicioReservacion: ReservacionService) {
+  private ServicioReservacion: ReservacionService
+  constructor() {
     this.obtenerR();
   }
 
@@ -21,13 +21,21 @@ export class VerReservacionesComponent implements OnInit {
 
   obtenerR() {
     this.ServicioReservacion.getReservaciones().subscribe((res: Reservacion[]) => {
+      for(let i=0;i<res.length;i++){
+        res[i].fecha_entrada=this.obtenerFecha(res[i].fecha_entrada);
+        res[i].fecha_salida=this.obtenerFecha(res[i].fecha_salida);
+      }
       this.lista_reservaciones = res;
       this.lista_reservacionesTabla = res;
       console.log(res);
+      this.obtenerDpi();
     }, (err) => {
       console.log(err);
     })
-    this.obtenerDpi();
+  }
+
+  obtenerFecha(fecha:string){
+    return fecha.substring(0,10);
   }
 
   ObtenerReservacionesUsuario(dpi: number) {
@@ -49,45 +57,52 @@ export class VerReservacionesComponent implements OnInit {
     { viewValue: 'Top 3 de reservaciones' },
     { viewValue: 'Reservaciones en fecha especifica' }
   ];
-  selected = this.listaOpciones[2].viewValue;
+  selected: any;
 
-  listaDpi: any[] =[];
+  listaDpi: any[] = [];
+  selectedDpi: any;
 
   verOpcion() {
     switch (this.selected) {
       case 'Todos':
-        alert('Esto es para todos');
-        break;
+        this.todos();
+        return 0;
       case 'Por Usuario':
-        alert('Esto es por Usuario');
-        break;
+        this.ObtenerReservacionesUsuario(this.selectedDpi);
+        return 1;
       case 'Top 3 de reservaciones':
         alert('Esto es un top 3');
-        break;
+        return 2;
       case 'Reservaciones en fecha especifica':
         alert('Esto es por fecha Especifica');
-        break;
+        return 3;
     }
   }
 
-  obtenerDpi(){
-    for(let i=0;i<this.lista_reservaciones.length;i++){
-      if(i==0){
-        this.listaDpi.push({dpi:this.lista_reservaciones[i].dpi});
+  todos() {
+    this.lista_reservacionesTabla = [];
+    this.lista_reservacionesTabla = this.lista_reservaciones;
+  }
+
+  obtenerDpi() {
+    for (let i = 0; i < this.lista_reservaciones.length; i++) {
+      if (i == 0) {
+        this.listaDpi.push({ dpi: this.lista_reservaciones[i].dpi });
       }
-      else{
-        var flag=false;
-        for(let j=0;j<this.listaDpi.length;j++){
-          if(this.listaDpi[j].dpi==this.lista_reservaciones[i].dpi){
-            flag=true;
+      else {
+        var flag = false;
+        for (let j = 0; j < this.listaDpi.length; j++) {
+          if (this.listaDpi[j].dpi == this.lista_reservaciones[i].dpi) {
+            flag = true;
             break;
           }
         }
-        if(flag==false){
-          this.listaDpi.push({dpi:this.lista_reservaciones[i].dpi});
+        if (flag == false) {
+          this.listaDpi.push({ dpi: this.lista_reservaciones[i].dpi });
         }
       }
     }
+    return true;
   }
 
 }

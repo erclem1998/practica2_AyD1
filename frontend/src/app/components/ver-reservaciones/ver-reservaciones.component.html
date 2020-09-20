@@ -14,8 +14,8 @@
             </mat-form-field><br>
             <h4>Dpi Usuarios</h4>
             <mat-form-field appearance="fill">
-                <mat-label>Opciones</mat-label>
-                <mat-select [(value)]="selected">
+                <mat-label>DPI</mat-label>
+                <mat-select [(value)]="selectedDpi">
                     <mat-option [value]="option.dpi" *ngFor="let option of listaDpi">{{ option.dpi }}</mat-option>
                 </mat-select>
             </mat-form-field><br>
