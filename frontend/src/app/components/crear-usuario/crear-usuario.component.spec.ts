@@ -39,4 +39,15 @@ describe('CrearUsuarioComponent', () => {
       done();
     }); 
   });
+
+  it('verificar dpi invalido', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDB = ress;
+      let user = {
+        dpi: MockDB[1].dpi-3000000,
+      }
+      expect(component.DPI_Longitud(user.dpi)).toContain('invalido');
+      done();
+    }); 
+  });
 });
