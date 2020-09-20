@@ -6,6 +6,8 @@ import {MatCardModule} from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { VerReservacionesComponent } from './components/ver-reservaciones/ver-reservaciones.component';
@@ -25,7 +27,8 @@ import { MatInputModule } from '@angular/material/input';
     UpdateUserComponent,
     VerReservacionesComponent,
     ActualizarReservaComponent,
-    EliminarUsuarioComponent
+    EliminarUsuarioComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatButtonModule,
     FormsModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

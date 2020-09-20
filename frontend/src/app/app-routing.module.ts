@@ -4,6 +4,7 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { VerReservacionesComponent } from "./components/ver-reservaciones/ver-reservaciones.component";
 import { ActualizarReservaComponent } from './components/actualizar-reserva/actualizar-reserva.component';
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
+import { LoginComponent } from '../app/components/login/login.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
     path: 'eliminar-usuario',
     component: EliminarUsuarioComponent
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
