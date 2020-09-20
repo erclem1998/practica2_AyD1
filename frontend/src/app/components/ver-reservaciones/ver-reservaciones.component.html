@@ -19,7 +19,7 @@
                     <mat-option [value]="option.dpi" *ngFor="let option of listaDpi">{{ option.dpi }}</mat-option>
                 </mat-select>
             </mat-form-field><br>
-            <button (click)="verOpcion()" mat-raised-button color="primary">Ver seleccion</button>
+            <button (click)="verOpcion(selectedDpi)" mat-raised-button color="primary">Ver seleccion</button>
         </div>
         <br>
         <div>

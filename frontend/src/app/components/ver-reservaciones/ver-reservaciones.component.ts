@@ -60,13 +60,13 @@ export class VerReservacionesComponent implements OnInit {
   listaDpi: any[] = [];
   selectedDpi: any;
 
-  verOpcion() {
-    switch (this.selected) {
+  verOpcion(sele) {
+    switch (sele) {
       case 'Todos':
         this.todos();
         return 0;
       case 'Por Usuario':
-        this.ObtenerReservacionesUsuario(this.selectedDpi);
+        this.ObtenerReservacionesUsuario(sele);
         return 1;
       case 'Top 3 de reservaciones':
         alert('Esto es un top 3');

@@ -53,8 +53,25 @@ describe('VerReservacionesComponent', () => {
     })
   });
 
-  it('Deberia devolver true', () => {
-    expect(component.todos()).not.toBeFalse();
+  it('Deberia ser 0 al seleccionar de combobox', () => {
+    expect(component.verOpcion('Todos')).toBe(0);
   });
+
+  it('Deberia ser 1 al seleccionar la opcion por Usuario', () => {
+    expect(component.verOpcion('Por Usuario')).not.toBe(0|2|3);
+  });
+
+  it('Deberia ser 2 al seleccionar Top 3 de reservaciones', () => {
+    expect(component.verOpcion('Top 3 de reservaciones')).not.toBeGreaterThanOrEqual(0|1|3);
+  });
+  
+  it('Deberia ser 3 al seleccionar en fecha especifica', () => {
+    expect(component.verOpcion('Reservaciones en fecha especifica')).not.toBeGreaterThan(3);
+  });
+
+  it('Deberia ser undefined si no se selecciona nada', () => {
+    expect(component.verOpcion('')).toBeUndefined();
+  });
+  
 
 });
