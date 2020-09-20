@@ -55,4 +55,21 @@ module.exports = (app, connection) => {
             }
         });
     });
+    app.post('/crear_user', (req,res) => {
+        let { dpi,username,passwd,correo,edad } = req.body;
+        let sql = `INSERT INTO USERPRACTICA(dpi,username,passwd,correo,edad) VALUES(?,?,?,?,?)`;
+        let data = [dpi,username,passwd,correo,edad]
+        try {
+            connection.query(sql, data, function (err, rows, fields) {
+                if (!err) {
+                    res.status(200).send({"msg":"usuario creado"});
+                }
+                else {
+                    res.status(200).send({"msg":"usuario ya registrado"});
+                }
+            });
+        } catch (error) {
+            res.status(404).send({"msg":"error en creacion"});
+        }
+    });
 }
