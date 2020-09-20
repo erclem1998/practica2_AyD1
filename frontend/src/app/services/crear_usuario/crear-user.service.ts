@@ -13,4 +13,8 @@ export class CrearUserService {
   getMockUsers():Observable<any[]> {
     return this.http.get<any[]>('assets/fakedb/fakeusertable.json');
   }
+
+  RegistrarUsuario(user:any){
+    return this.http.post(baseURL+'crear_user',user);
+  }
 }

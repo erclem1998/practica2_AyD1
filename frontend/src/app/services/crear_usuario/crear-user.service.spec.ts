@@ -45,4 +45,26 @@ describe('CrearUserService', () => {
       done();
     }); 
   });
+
+  it('verifica que no se registre un usuario existente', (done) => {
+    service.getMockUsers().subscribe((ress: any[]) => {
+      MockDBUser = ress;
+      let respuesta = {
+        msg: ''
+      };
+      let user = {
+        dpi: MockDBUser[2].dpi,
+        username: MockDBUser[2].username,
+        passwd: MockDBUser[2].passwd,
+        correo: MockDBUser[2].correo,
+        edad: MockDBUser[2].edad
+      }
+      service.RegistrarUsuario(user).subscribe(res => {
+        respuesta = JSON.parse(JSON.stringify(res));
+        console.log(respuesta.msg);
+        expect(respuesta.msg).not.toBe('usuario creado');
+        done();
+      });
+    }); 
+  })
 });
