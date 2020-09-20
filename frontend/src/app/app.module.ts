@@ -12,12 +12,12 @@ import { VerReservacionesComponent } from './components/ver-reservaciones/ver-re
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { ActualizarReservaComponent } from './components/actualizar-reserva/actualizar-reserva.component';
+import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     UpdateUserComponent,
     VerReservacionesComponent,
     ActualizarReservaComponent,
+    EliminarUsuarioComponent
   ],
   imports: [
     BrowserModule,

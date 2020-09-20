@@ -1,0 +1,38 @@
+.container {
+    max-width: 500px;
+    margin: auto;
+}
+
+h3, p {
+    margin-top: 1%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-user {
+    display: block;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mar-l {
+    margin-left: 5%;
+}
+
+.mar-t {
+    margin-top: 4%;
+}
+
+.text-center {
+    text-align: center;
+    border-radius: 10rem;
+}

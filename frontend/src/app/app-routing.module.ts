@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { VerReservacionesComponent } from "./components/ver-reservaciones/ver-reservaciones.component";
 import { ActualizarReservaComponent } from './components/actualizar-reserva/actualizar-reserva.component';
+import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,10 @@ const routes: Routes = [
     path: 'actualizar-reservacion',
     component: ActualizarReservaComponent
   },
-];
+  {
+    path: 'eliminar-usuario',
+    component: EliminarUsuarioComponent
+  },
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
