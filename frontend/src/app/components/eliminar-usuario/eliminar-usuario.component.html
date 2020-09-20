@@ -1,1 +1,21 @@
-<p>eliminar-usuario works!</p>
+<div class="container mar-t">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Actualizar Reservacion</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="form-user" [formGroup]="FG">
+            
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>Id</mat-label>
+                    <input matInput formControlName="dpi" type="number" placeholder="DPI a Eliminar...">
+                    <mat-error *ngIf="dpiFC.hasError('required')">
+                        DPI es <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            
+            <button (click)="eliminar(FG.value)" [disabled]="FG.invalid" class="mar-t mat-form-field text-center" mat-raised-button color="danger">Eliminar</button>
+        </mat-card-content>
+    </mat-card>
+</div>

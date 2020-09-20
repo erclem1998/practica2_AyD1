@@ -6,7 +6,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
 
 describe('EliminarUsuarioComponent', () => {
   let component: EliminarUsuarioComponent;
@@ -21,7 +20,6 @@ describe('EliminarUsuarioComponent', () => {
         MatButtonModule,
         ReactiveFormsModule,
         BrowserAnimationsModule,
-        HttpClientModule
       ]
     })
     .compileComponents();

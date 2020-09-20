@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EliminarUsuarioService } from '../../services/eliminar-usuario/eliminar-usuario.service'
 
 @Component({
@@ -7,6 +8,12 @@ import { EliminarUsuarioService } from '../../services/eliminar-usuario/eliminar
   styleUrls: ['./eliminar-usuario.component.scss']
 })
 export class EliminarUsuarioComponent implements OnInit {
+
+  FG = new FormGroup({
+    dpi: new FormControl('', [
+      Validators.required
+    ]),
+  });
 
   constructor(private userService: EliminarUsuarioService) { }
 
@@ -19,6 +26,10 @@ export class EliminarUsuarioComponent implements OnInit {
       alert(res.message)
       return true
     })
+  }
+
+  get dpiFC() {
+    return this.FG.get('dpi');
   }
 
 }
