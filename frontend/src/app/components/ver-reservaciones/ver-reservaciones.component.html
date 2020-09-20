@@ -5,6 +5,24 @@
     </mat-card-header>
     <mat-card-content>
         <div>
+            <h4>Opciones de vista</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Opciones</mat-label>
+                <mat-select [(value)]="selected">
+                    <mat-option [value]="option.viewValue" *ngFor="let option of listaOpciones">{{ option.viewValue }}</mat-option>
+                </mat-select>
+            </mat-form-field><br>
+            <h4>Dpi Usuarios</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Opciones</mat-label>
+                <mat-select [(value)]="selected">
+                    <mat-option [value]="option.dpi" *ngFor="let option of listaDpi">{{ option.dpi }}</mat-option>
+                </mat-select>
+            </mat-form-field><br>
+            <button (click)="verOpcion()" mat-raised-button color="primary">Ver seleccion</button>
+        </div>
+        <br>
+        <div>
 
             <table>
                 <thead>
