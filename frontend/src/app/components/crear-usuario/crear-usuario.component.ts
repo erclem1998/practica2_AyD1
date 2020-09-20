@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/user/user.model';
+import { CrearUserService } from '../../services/crear_usuario/crear-user.service'
 
 @Component({
   selector: 'app-crear-usuario',
@@ -7,12 +7,27 @@ import { User } from '../../models/user/user.model';
   styleUrls: ['./crear-usuario.component.scss']
 })
 export class CrearUsuarioComponent implements OnInit {
-  usuario: User;
+  usuario = {
+    dpi: null,
+    username: '',
+    passwd: '',
+    correo: '',
+    edad: null
+  };
 
-  constructor() { }
+  constructor(private crear:CrearUserService) { }
 
   ngOnInit(): void {
   }
 
-  Registrar(){}
+  DPI_Longitud(num:number){
+    if(num.toString().length == 7){
+      return 'dpi valido';
+    }
+    return 'dpi invalido'
+  }
+
+  Registrar(){
+    console.log(this.usuario);
+  }
 }
