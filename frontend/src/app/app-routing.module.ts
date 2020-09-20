@@ -6,6 +6,7 @@ import { ActualizarReservaComponent } from './components/actualizar-reserva/actu
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import {CrearServicioComponent} from './components/crear-servicio/crear-servicio.component';
 
 const routes: Routes = [
   {
@@ -32,7 +33,12 @@ const routes: Routes = [
     path: 'crear_user',
     component: CrearUsuarioComponent
   },
-  ]
+  {
+    path: 'crear_servicio',
+    component: CrearServicioComponent,
+  },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

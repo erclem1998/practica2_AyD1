@@ -1,0 +1,23 @@
+[
+    {
+        "id_servicio": 1,
+        "nombre_servicio": "Desayuno",
+        "descripcion": "Se tendrá listo el desayuno a la hora y el menú solicitado",
+        "precio": 10,
+        "capacidad_personas": 25        
+    },
+    {
+        "id_servicio": 2,
+        "nombre_servicio": "Parqueo cerca de habitación",
+        "descripcion": "Se reservará un parqueo cercano a la habitación solicitada",
+        "precio": 70,
+        "capacidad_personas": 20        
+    },
+    {
+        "id_servicio": 3,
+        "nombre_servicio": "Internet",
+        "descripcion": "Se dará acceso de internet por wifi o si desea por cable de red en habitación",
+        "precio": 40,
+        "capacidad_personas": 150        
+    }
+]

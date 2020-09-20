@@ -7,7 +7,6 @@ import {MatCardModule} from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { VerReservacionesComponent } from './components/ver-reservaciones/ver-reservaciones.component';
@@ -15,6 +14,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { ActualizarReservaComponent } from './components/actualizar-reserva/actualizar-reserva.component';
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
+import { CrearServicioComponent } from './components/crear-servicio/crear-servicio.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -31,7 +31,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     ActualizarReservaComponent,
     EliminarUsuarioComponent,
     LoginComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    CrearServicioComponent
   ],
   imports: [
     BrowserModule,
